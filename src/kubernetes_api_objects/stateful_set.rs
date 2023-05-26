@@ -6,9 +6,9 @@ use crate::kubernetes_api_objects::object_meta::*;
 use crate::kubernetes_api_objects::resource::*;
 use vstd::prelude::*;
 
-use k8s_openapi::api::apps::v1::StatefulSet as K8SStatefulSet;
-use k8s_openapi::api::apps::v1::StatefulSetSpec as K8SStatefulSetSpec;
-use k8s_openapi::api::apps::v1::StatefulSetStatus as K8SStatefulSetStatus;
+use deps_hack::k8s_openapi::api::apps::v1::StatefulSet as K8SStatefulSet;
+use deps_hack::k8s_openapi::api::apps::v1::StatefulSetSpec as K8SStatefulSetSpec;
+use deps_hack::k8s_openapi::api::apps::v1::StatefulSetStatus as K8SStatefulSetStatus;
 
 verus! {
 

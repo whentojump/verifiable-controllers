@@ -9,8 +9,8 @@ use crate::pervasive_ext::string_map;
 use crate::pervasive_ext::string_view::*;
 use vstd::prelude::*;
 
-use k8s_openapi::api::core::v1::ConfigMap as K8SConfigMap;
-use k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
+use deps_hack::k8s_openapi::api::core::v1::ConfigMap as K8SConfigMap;
+use deps_hack::k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
 
 verus! {
 
@@ -54,7 +54,7 @@ impl ConfigMap {
         ensures
             res@.kind == Kind::ConfigMapKind,
     {
-        ApiResource::from_kube_api_resource(kube::api::ApiResource::erase::<K8SConfigMap>(&()))
+        ApiResource::from_kube_api_resource(deps_hack::kube::api::ApiResource::erase::<K8SConfigMap>(&()))
     }
 
     /// Convert a ConfigMap to a DynamicObject
@@ -65,7 +65,7 @@ impl ConfigMap {
             obj@ == self@.to_dynamic_object(),
     {
         DynamicObject::from_kube_obj(
-            k8s_openapi::serde_json::from_str(&k8s_openapi::serde_json::to_string(&self.inner).unwrap()).unwrap()
+            deps_hack::k8s_openapi::serde_json::from_str(&deps_hack::k8s_openapi::serde_json::to_string(&self.inner).unwrap()).unwrap()
         )
     }
 

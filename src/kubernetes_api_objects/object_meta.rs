@@ -5,7 +5,7 @@ use crate::pervasive_ext::string_view::*;
 use vstd::prelude::*;
 use vstd::string::*;
 
-use k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
+use deps_hack::k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
 
 verus! {
 

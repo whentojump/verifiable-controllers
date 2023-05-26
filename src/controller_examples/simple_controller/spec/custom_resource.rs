@@ -12,7 +12,7 @@ use vstd::string::*;
 use deps_hack::SimpleCR;
 use deps_hack::SimpleCRSpec;
 
-use k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
+use deps_hack::k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta as K8SObjectMeta;
 
 verus! {
 
@@ -36,7 +36,7 @@ impl CustomResource {
         ensures
             res@.kind == Kind::CustomResourceKind,
     {
-        ApiResource::from_kube_api_resource(kube::api::ApiResource::erase::<SimpleCR>(&()))
+        ApiResource::from_kube_api_resource(deps_hack::kube::api::ApiResource::erase::<SimpleCR>(&()))
     }
 
     #[verifier(external_body)]

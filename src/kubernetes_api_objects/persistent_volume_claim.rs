@@ -6,9 +6,9 @@ use crate::kubernetes_api_objects::object_meta::*;
 use crate::kubernetes_api_objects::resource::*;
 use vstd::prelude::*;
 
-use k8s_openapi::api::core::v1::PersistentVolumeClaim as K8SPersistentVolumeClaim;
-use k8s_openapi::api::core::v1::PersistentVolumeClaimSpec as K8SPersistentVolumeClaimSpec;
-use k8s_openapi::api::core::v1::PersistentVolumeClaimStatus as K8SPersistentVolumeClaimStatus;
+use deps_hack::k8s_openapi::api::core::v1::PersistentVolumeClaim as K8SPersistentVolumeClaim;
+use deps_hack::k8s_openapi::api::core::v1::PersistentVolumeClaimSpec as K8SPersistentVolumeClaimSpec;
+use deps_hack::k8s_openapi::api::core::v1::PersistentVolumeClaimStatus as K8SPersistentVolumeClaimStatus;
 
 verus! {
 

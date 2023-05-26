@@ -6,9 +6,9 @@ use crate::kubernetes_api_objects::object_meta::*;
 use crate::kubernetes_api_objects::resource::*;
 use vstd::prelude::*;
 
-use k8s_openapi::api::core::v1::Pod as K8SPod;
-use k8s_openapi::api::core::v1::PodSpec as K8SPodSpec;
-use k8s_openapi::api::core::v1::PodStatus as K8SPodStatus;
+use deps_hack::k8s_openapi::api::core::v1::Pod as K8SPod;
+use deps_hack::k8s_openapi::api::core::v1::PodSpec as K8SPodSpec;
+use deps_hack::k8s_openapi::api::core::v1::PodStatus as K8SPodStatus;
 
 verus! {
 

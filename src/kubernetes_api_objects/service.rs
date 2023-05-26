@@ -6,9 +6,9 @@ use crate::kubernetes_api_objects::object_meta::*;
 use crate::kubernetes_api_objects::resource::*;
 use vstd::prelude::*;
 
-use k8s_openapi::api::core::v1::Service as K8SService;
-use k8s_openapi::api::core::v1::ServiceSpec as K8SServiceSpec;
-use k8s_openapi::api::core::v1::ServiceStatus as K8SServiceStatus;
+use deps_hack::k8s_openapi::api::core::v1::Service as K8SService;
+use deps_hack::k8s_openapi::api::core::v1::ServiceSpec as K8SServiceSpec;
+use deps_hack::k8s_openapi::api::core::v1::ServiceStatus as K8SServiceStatus;
 
 verus! {
 
