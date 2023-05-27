@@ -20,9 +20,6 @@ jobs:
         with:
           repository: verus-lang/verus
           path: verus
-      - name: Install Rust toolchain
-        run: |
-          curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL "https://sh.rustup.rs" | sh -s -- --default-toolchain none -y
       - name: Build Verus
         run: |
           cd verus/source
